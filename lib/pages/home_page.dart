@@ -30,7 +30,6 @@ class _HomePageState extends State<HomePage> {
                   },
                   child: const Text(
                     'No',
-                    style: TextStyle(color: Color.fromARGB(255, 240, 98, 146)),
                   ),
                 ),
                 TextButton(
@@ -39,7 +38,6 @@ class _HomePageState extends State<HomePage> {
                   },
                   child: const Text(
                     'Yes',
-                    style: TextStyle(color: Color.fromARGB(255, 240, 98, 146)),
                   ),
                 ),
               ],
