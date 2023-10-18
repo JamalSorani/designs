@@ -50,7 +50,7 @@ class _ListViewPageState extends State<ListViewPage> {
               child: FloatingActionButton(
                 onPressed: () async {
                   await loadFileFromAssets(index);
-                  if (context.mounted) return;
+                  // ignore: use_build_context_synchronously
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       content: Text('downloading...'),

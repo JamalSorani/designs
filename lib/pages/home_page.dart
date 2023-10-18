@@ -14,6 +14,7 @@ class _HomePageState extends State<HomePage> {
     return WillPopScope(
       onWillPop: () async {
         return await showDialog(
+          barrierDismissible: false,
           context: context,
           builder: (context) {
             return AlertDialog(
@@ -27,13 +28,19 @@ class _HomePageState extends State<HomePage> {
                   onPressed: () {
                     Navigator.of(context).pop(false);
                   },
-                  child: const Text('No'),
+                  child: const Text(
+                    'No',
+                    style: TextStyle(color: Color.fromARGB(255, 240, 98, 146)),
+                  ),
                 ),
                 TextButton(
                   onPressed: () {
                     Navigator.of(context).pop(true);
                   },
-                  child: const Text('Yes'),
+                  child: const Text(
+                    'Yes',
+                    style: TextStyle(color: Color.fromARGB(255, 240, 98, 146)),
+                  ),
                 ),
               ],
             );
