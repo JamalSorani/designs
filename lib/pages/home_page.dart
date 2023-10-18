@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.pink[200],
-          title: const Text('Design App'),
+          title: const Text('Flutter Design'),
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
