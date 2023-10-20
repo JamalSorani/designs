@@ -103,10 +103,6 @@ class Item extends StatelessWidget {
   final String color1;
   final String color2;
 
-  final snackBar = const SnackBar(
-    content: Text('copied'),
-    duration: Duration(seconds: 2),
-  );
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -131,10 +127,8 @@ class Item extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             TextButton.icon(
-              onPressed: () async {
-                await FlutterClipboard.copy(color1);
-                if (context.mounted) return;
-                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              onPressed: () {
+                FlutterClipboard.copy(color1);
               },
               icon: const Icon(
                 Icons.copy,
@@ -148,10 +142,8 @@ class Item extends StatelessWidget {
               ),
             ),
             TextButton.icon(
-              onPressed: () async {
-                await FlutterClipboard.copy(color2);
-                // ignore: use_build_context_synchronously
-                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              onPressed: () {
+                FlutterClipboard.copy(color2);
               },
               icon: const Icon(
                 Icons.copy,

@@ -90,10 +90,7 @@ class ColorsPage extends StatelessWidget {
     return SafeArea(
       child: Swiper(
         itemBuilder: (BuildContext context, int index) {
-          return GestureDetector(
-            onDoubleTap: () {},
-            child: list[index],
-          );
+          return list[index];
         },
         itemCount: list.length,
         pagination: SwiperPagination(
@@ -146,15 +143,8 @@ class Item extends StatelessWidget {
               style: const TextStyle(color: Colors.white),
             ),
             IconButton(
-              onPressed: () async {
-                await FlutterClipboard.copy(color);
-                // ignore: use_build_context_synchronously
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('copied'),
-                    duration: Duration(seconds: 2),
-                  ),
-                );
+              onPressed: () {
+                FlutterClipboard.copy(color);
               },
               icon: const Icon(
                 Icons.copy,
